@@ -17,6 +17,8 @@
     "react-router": "^7.6.1",
     "react-tab": "^1.0.0",
     "react-tabs": "^6.1.0",
+    "sweetalert2": "^11.22.0",
+    "sweetalert2-react-content": "^5.1.0",
     "tailwindcss": "^4.1.8"
   },
   "devDependencies": {
