@@ -3,21 +3,6 @@ import Book from '../Book/Book';
 
 const Books = ({ data }) => {
 
-    const [allBooks, setAllBooks] = useState([]);
-
-
-    // *Way 1 for Data Fetching
-    // useEffect(() => {
-    //     fetch('booksData.json').then(res => res.json()).then(data =>
-    //         setAllBooks(data)
-    //     )
-    // }, []);
-
-    // Way-2 for Data Fetching 
-    // const bookPromise = fetch('booksData.json').then(res => res.json());
-
-    // console.log(data);
-
 
     return (
         <div>
