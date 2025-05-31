@@ -8,7 +8,7 @@ const Book = ({ singleBook }) => {
     // const data = use(bookPromise);
     // console.log(data);
 
-    const { bookName, bookId, author, image, rating, category, tags, yearOfPublishing, publisher } = singleBook;
+    const { bookName, bookId, totalPages, author, image, rating, category, tags, yearOfPublishing, publisher } = singleBook;
 
 
     return (
@@ -31,6 +31,7 @@ const Book = ({ singleBook }) => {
                         <div className="badge badge-secondary">{yearOfPublishing}</div>
                     </h2>
                     <p>Book by: {publisher}</p>
+                    <p>Total Pages: {totalPages}</p>
                     <div className='border border-dashed border-gray-200'></div>
                     <div className="card-actions justify-end">
                         <div className="badge badge-outline">{category}</div>
