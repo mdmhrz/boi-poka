@@ -3,6 +3,7 @@ import { useLoaderData, useParams } from 'react-router';
 import { addToStoredDB } from '../../Utility/addToDB';
 import Swal from 'sweetalert2'
 import withReactContent from 'sweetalert2-react-content'
+import { toast, ToastContainer } from 'react-toastify';
 
 const MySwal = withReactContent(Swal)
 
@@ -25,12 +26,13 @@ const BookDetails = () => {
         // If the book does not exist, push it into the collection or array
         addToStoredDB(id);
 
-        Swal.fire({
-            title: "Good job!",
-            text: "You clicked the button!",
-            icon: "success"
-        });
+        // Swal.fire({
+        //     title: "Good job!",
+        //     text: "You clicked the button!",
+        //     icon: "success"
+        // });
 
+        toast("Added to Marked as read")
 
     }
 
@@ -38,6 +40,7 @@ const BookDetails = () => {
         <div className='w-2/3 mx-auto'>
             <img className='w-48' src={image} alt="" />
             <h4>{bookName}</h4>
+            <ToastContainer />
             <button onClick={() => handleMarkAsRead(id)} className='btn btn-accent'>Mark as Read</button>
             <button className='btn btn-info ml-2'>Add To Wishlist</button>
         </div>
