@@ -9,7 +9,7 @@ const Home = () => {
     // console.log(data);
 
     return (
-        <div>
+        <div className='mb-10'>
             <Banner></Banner>
             <Books data={data}></Books>
         </div>
