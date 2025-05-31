@@ -1,22 +1,34 @@
 import React from 'react';
 import { useLoaderData, useParams } from 'react-router';
+import { addToStoredDB } from '../../Utility/addToDB';
+
 
 const BookDetails = () => {
     const { id } = useParams();
-    const bookIds = parseInt(id);
+    const bookId = parseInt(id);
     // console.log(id);
     const data = useLoaderData();
     // console.log(data);
-    const singleBook = data.find(book => book.bookId === bookIds);
+    const singleBook = data.find(book => book.bookId === bookId);
     // console.log(singleBook);
-    const { bookName, bookId, author, image, rating, category, tags, yearOfPublishing, publisher } = singleBook;
+    const { bookName, author, image, rating, category, tags, yearOfPublishing, publisher } = singleBook || {};
+
+    const handleMarkAsRead = (id) => {
+        // Store book by ID
+        // Define where to store (e.g., an array or localStorage)
+        // If the book already exists, show an alert
+        // If the book does not exist, push it into the collection or array
+        addToStoredDB(id)
+
+
+    }
 
     return (
         <div className='w-2/3 mx-auto'>
             <img className='w-48' src={image} alt="" />
             <h4>{bookName}</h4>
-            <button className='btn btn-accent'>Read</button>
-            <button className='btn btn-info ml-2'>Wishlist</button>
+            <button onClick={() => handleMarkAsRead(id)} className='btn btn-accent'>Mark as Read</button>
+            <button className='btn btn-info ml-2'>Add To Wishlist</button>
         </div>
     );
 };
